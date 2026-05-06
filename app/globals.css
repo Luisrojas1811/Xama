@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+/* En Tailwind v4, las variables se definen así, sin @layer */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --xama-pink: #2c0219;
+  --xama-pink-light: #1f0117;
+  --xama-black: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Estilos globales directos */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.404);
+  color: rgb(228, 69, 6);
+}
+
+/* Creamos nuestras clases personalizadas */
+.text-gradient-xama {
+  background: linear-gradient(to right, var(--xama-pink), var(--xama-pink-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-xama {
+  background-color: rgb(247, 223, 9);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-xama:hover {
+  background-color: var(--xama-pink);
+  transform: translateY(-2px);
+}
+
+.bg-xama-pattern {
+  background-color: #11000d;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(225, 48, 108, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 107, 107, 0.03) 0px, transparent 50%);
 }
